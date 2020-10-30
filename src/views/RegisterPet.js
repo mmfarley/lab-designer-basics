@@ -6,20 +6,23 @@ export const RegisterPet = tether(function* ({ Api, redirect }) {
 
     const { Pet, Breed } = Api;
 
-    const form = yield {
+    // 1. How could we make this object stateful?
+    const form =  {
         name: '',
         imageUrl: null,
         breed: null
     }
 
-    const breedMenu = yield {
+    // 2. How could we make this object stateful?
+    const breedMenu =  {
         isShowing: false
     }
 
     let breeds = yield Breed.list()
 
     let handleSubmit = async () => {
-        await Pet.create({ name: form.name, imageUrl: form.imageUrl, breedId: form.breed.id})
+        // 3. What method can we use to make a new object from a class and persist it?
+        await Pet.______({ name: form.name, imageUrl: form.imageUrl, breedId: form.breed.id}) 
         redirect('/')
     }
 
@@ -28,10 +31,9 @@ export const RegisterPet = tether(function* ({ Api, redirect }) {
             <Heading>Register Pet</Heading>
             <Section>
                 <Subheading>Name</Subheading>
+                {/* 4. What props do we need to pass to this TextInput to make it work? */}
                 <TextInput
                     label="Name"
-                    value={form.name}
-                    onChange={newName => form.name = newName}
                 />
             </Section>
             <Section>

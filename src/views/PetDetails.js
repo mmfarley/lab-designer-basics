@@ -2,11 +2,11 @@ import React from 'react'
 import { tether, Section, Area, List, Subheading, Container, Heading, Caption, Image } from '@triframe/designer'
 
 
-export const PetDetails = tether(function* ({ Api, useParams }) {
+export const PetDetails = tether(function* ({ Api }) {
 
   const { Pet } = Api;
 
-  const { id } = yield useParams()
+  const { id } = yield ______() // <-- 1. What method can we call here to get params from the path?
 
   const pet = yield Pet.read(id, `
       name,
@@ -22,13 +22,13 @@ export const PetDetails = tether(function* ({ Api, useParams }) {
   return (
     <Container>
       <Heading>{pet.name}</Heading>
-      <Caption>{pet.breed.name}</Caption>
+      {/* 2. Render a caption with the name of the pet's breed here */}
       <Subheading>Feeding Times:</Subheading>
-      {pet.feedingTimes.map(feedingTime => (
+      {/* 3. Loop over all of the pet's feeding times here */}
         <List.Item
-          title={feedingTime.label}
+          title={null /* 4. Put the feeding time's label here */}
         />
-      ))}
+      {/* 3. (end the loop here) */}
     </Container>
   )
 })  
