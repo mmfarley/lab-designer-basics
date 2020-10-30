@@ -1,5 +1,5 @@
 import React from 'react'
-import { tether, Section, TextInput, List, Container, Heading, Button } from '@triframe/designer'
+import { tether, Section, Avatar, TextInput, List, Container, Heading, Button } from '@triframe/designer'
 
 
 export const PetList = tether(function*({ Api }) {

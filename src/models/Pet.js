@@ -1,6 +1,6 @@
 import { include, Model, string, belongsTo } from '@triframe/scribe'
 import { Resource } from '@triframe/core'
-import { hasMany } from '@triframe/scribe/dist/decorators'
+import { float, hasMany } from '@triframe/scribe/dist/decorators'
 
 export class Pet extends Resource {
 
@@ -8,6 +8,12 @@ export class Pet extends Resource {
 
     @string
     name = ""
+
+    @string
+    imageUrl = null
+
+    @float
+    age = null
 
     @belongsTo
     breed

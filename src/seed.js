@@ -23,21 +23,21 @@ export const seed = async () => {
             name: 'Tess',
             age: 10,
             breedId: terrier.id,
-            img_url: "https://res.cloudinary.com/jmiles/image/upload/v1585587772/lecture-assets/master/appendix/doggos/tess.jpg"
+            imageUrl: "https://res.cloudinary.com/jmiles/image/upload/v1585587772/lecture-assets/master/appendix/doggos/tess.jpg"
         })
 
         let rizzo = await Pet.create({
             name: 'Rizzo',
             age: 2,
             breedId: schnauzer.id,
-            img_url: "https://res.cloudinary.com/jmiles/image/upload/v1585587772/lecture-assets/master/appendix/doggos/rizzo.jpg"
+            imageUrl: "https://res.cloudinary.com/jmiles/image/upload/v1585587772/lecture-assets/master/appendix/doggos/rizzo.jpg"
         })
 
         let pip = await Pet.create({
             name: 'Pip',
             age: 5,
             breedId: goldenRetriever.id,
-            img_url: "https://res.cloudinary.com/jmiles/image/upload/v1585587772/lecture-assets/master/appendix/doggos/pip.jpg"
+            imageUrl: "https://res.cloudinary.com/jmiles/image/upload/v1585587772/lecture-assets/master/appendix/doggos/pip.jpg"
         })
 
         await FeedingScheduleItem.create({ feedingTimeId: morning.id, petId: tess.id })
